@@ -1,8 +1,8 @@
 import s1 from '../assets/services/s1.jpeg';
-import s2 from '../assets/services/s1.jpeg';
-import s3 from '../assets/services/s1.jpeg';
-import s4 from '../assets/services/s1.jpeg';
-import s5 from '../assets/services/s1.jpeg';
+import s2 from '../assets/services/s2.jpeg';
+import s3 from '../assets/services/s3.jpeg';
+import s4 from '../assets/services/s4.jpeg';
+import s5 from '../assets/services/s5.jpeg';
 
 const servicesData = {
   services: [
