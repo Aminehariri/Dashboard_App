@@ -9,8 +9,10 @@ import { Link  } from 'react-router-dom';
 import Lead from './Lead';
 import leadsData from '../../data/data.json'
 import data from '../../data/data.json'
+import Swal from 'sweetalert2';
 
-export default function Leads(props) {
+
+export default function LeadsList(props) {
   const [currentPage, setCurrentPage] = useState(0);
   const leadsPerPage = 5; // Nombre de leads à afficher par page
 
@@ -32,6 +34,28 @@ export default function Leads(props) {
 
   const handlePageClick = ({ selected }) => {
     setCurrentPage(selected);
+  };
+
+  const showDeleteAlert = () => {
+    Swal.fire({
+      title: 'Êtes-vous sûr ?',
+      text: "Cette action est irréversible !",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor:'red',
+      denyButtonColor:'#22c55e',
+      confirmButtonText: 'Oui, supprimer !',
+      cancelButtonText: 'Non, annuler',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteLead();
+        Swal.fire(
+          'Supprimé !',
+          'Le lead a été supprimé avec succes.',
+          'success'
+        );
+      }
+    });
   };
 
   return (
@@ -70,21 +94,21 @@ export default function Leads(props) {
         <table>
           <thead>
             <tr>
-              <th>Numero</th>
               <th>Nom</th>
               <th>Email</th>
+              <th>Le message</th>
               <th>La date</th>
-              <th>Status</th>
+              <th>Modifier</th>
             </tr>
           </thead>
           <tbody>
             {currentLeads.map(row => (
               <tr key={Lead} >
-                <td>{row.id}</td>
                 <td>{row.name}</td>
                 <td>{row.email}</td>
+                <td><p className='message-text'>{row.message}</p></td>
                 <td>{row.date}</td>
-                <td className="l-btns"><span className="l-one"><Link  to={`/Lead?id=${row.id}`} title='Consulter' ><GoFile /></Link></span> <span className="l-two"><AiOutlineDelete /></span></td>
+                <td className="l-btns"><span className="l-one" role='button' title='Consulter' ><Link  to={`/Lead?id=${row.id}`}  ><FaRegEye /></Link></span> <span role='button' title='Supprimer' onClick={showDeleteAlert} className="l-two"><AiOutlineDelete /></span></td>
 
               </tr>
             ))}

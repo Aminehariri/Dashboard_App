@@ -9,32 +9,37 @@ const servicesData = {
     {
       id: 1,
       title: "Consultation en ligne",
+      subtitle: "Conseils à distance",
       texte: "Recevez des conseils d'experts depuis le confort de votre maison.",
       image: s1
     },
     {
       id: 2,
       title: "Développement Web",
+      subtitle: "Sites modernes",
       texte: "Création de sites web modernes et réactifs pour votre entreprise.",
-      image: "https://example.com/images/developpement_web.jpg"
+      image: s2
     },
     {
       id: 3,
       title: "Marketing numérique",
+      subtitle: "Stratégies efficaces",
       texte: "Améliorez votre présence en ligne avec nos stratégies de marketing.",
-      image: "https://example.com/images/marketing_numerique.jpg"
+      image: s3
     },
     {
       id: 4,
       title: "Support technique",
+      subtitle: "Assistance 24/7",
       texte: "Assistance 24/7 pour résoudre tous vos problèmes techniques.",
-      image: "https://example.com/images/support_technique.jpg"
+      image: s4
     },
     {
       id: 5,
       title: "Formation professionnelle",
+      subtitle: "Développement de compétences",
       texte: "Programmes de formation pour développer vos compétences professionnelles.",
-      image: "https://example.com/images/formation_professionnelle.jpg"
+      image: s5
     }
   ]
 };

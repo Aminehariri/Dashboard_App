@@ -21,12 +21,12 @@ export default function Aside(){
   return(
     <aside className="left-aside">
       <div className="head-logo">
-         <Link to="/" className=""> <img src={logo} className="logo react" alt="React logo" /></Link>
+         <Link to="/leadsList" className=""><img src={logo} className="logo react" alt="React logo" /></Link>
       </div>
 
       <p className="">Outils</p>
       <ul>
-        <li><NavLink to="/leads"><IoMailUnreadOutline /> Leads</NavLink></li>
+        <li><NavLink to="/leadsList"><IoMailUnreadOutline /> Leads</NavLink></li>
         <li><NavLink to={'/stats'}><MdQueryStats />Statistic</NavLink></li>
         <li><NavLink to={'/setting'}><IoSettingsOutline />Parametres</NavLink></li>
       </ul>
@@ -34,7 +34,7 @@ export default function Aside(){
         <ul>
           <li><NavLink to="/accueil"><LuHome />Accueil</NavLink></li>
           <li><NavLink to='/presentation'><BsShop />Qui sommes-nous</NavLink></li>
-          <li><NavLink to="/services"><FaList />Services</NavLink></li>
+          <li><NavLink to="/serviceslist"><FaList />Services</NavLink></li>
           <li><NavLink to="/galerie"><FaRegImages />Galerie</NavLink></li>
           <li><NavLink to="/contact"><RiContactsLine />Contact</NavLink></li>
         </ul>   

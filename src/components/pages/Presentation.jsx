@@ -35,7 +35,7 @@ export default function Accueil() {
         
               ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
             }}
-            initialValue="Welcome to TinyMCE!"
+            initialValue="Site en cours d'enrichissement..."
           />
         </div>
         <div className="form-group">

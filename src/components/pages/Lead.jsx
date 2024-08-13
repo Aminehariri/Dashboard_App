@@ -4,6 +4,7 @@ import data from '../../data/data.json'
 import leadimg from '../../assets/message.svg'
 import { Link } from 'react-router-dom';
 import img2 from '../../assets/text-pana.svg'
+import Swal from 'sweetalert2';
 
 export default function Lead() {
     const location = useLocation();
@@ -21,6 +22,28 @@ export default function Lead() {
     if (!lead) {
         return <p>No lead found with ID {id}</p>;
     }
+
+    const showDeleteAlert = () => {
+        Swal.fire({
+          title: 'Êtes-vous sûr ?',
+          text: "Cette action est irréversible !",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor:'red',
+          denyButtonColor:'#22c55e',
+          confirmButtonText: 'Oui, supprimer !',
+          cancelButtonText: 'Non, annuler',
+        }).then((result) => {
+          if (result.isConfirmed) {
+            deleteLead();
+            Swal.fire(
+              'Supprimé !',
+              'Le lead a été supprimé avec succes.',
+              'success'
+            );
+          }
+        });
+      };
 
 
     return (
@@ -56,8 +79,8 @@ export default function Lead() {
 
                         <div className="cta">
                             <a href="#" className="btn-principal">Repondu</a>
-                            <NavLink to='/leads' className="btn-principal">Retour</NavLink>
-                            <a href="#" className="btn-principal delete">Supprumer</a>
+                            <NavLink to='/leadsList' className="btn-principal">Retour</NavLink>
+                            <button title='Supprimer' onClick={showDeleteAlert} className="btn-principal delete">Supprimer</button>
                         </div>
 
                        

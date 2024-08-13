@@ -105,14 +105,14 @@ span.statu {
 }
 .left-aside ul li svg {
   color: var(--color4);
-  font-size: 22px;
+  font-size: 20px;
 }
 .left-aside ul li a {
   padding: 0;
   color: var(--color4);
   text-decoration: none;
   transition: all .3s linear;
-  font-size: 16px;
+  font-size: 15px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -124,13 +124,13 @@ span.statu {
 }
 .left-aside ul li a.active:before ,.left-aside ul li:hover a:before {
   content: "";
-  border: 2px solid transparent;
+  /* border: 1px solid transparent; */
   position: absolute;
-  left: -12px;
+  left: -9px;
   top: 0;
   bottom: 0;
   border-radius: 5px;
-  width: 2px;
+  width: 3px;
   background-color: transparent;
   transition: all .3s linear;
 }
@@ -200,7 +200,7 @@ h2.main-title:before {
   content: '';
   position: absolute;
   width: 100px;
-  height: 4px;
+  height: 2px;
   background: var(--color2);
   top: 37px;
   border-radius: 50px;
@@ -304,7 +304,8 @@ form input.btn-principal:hover ,.btn-principal:hover{
   display: flex;
   gap: 10px;
 }
-.leads-nav ul li a, .pagination li a{
+
+.leads-nav ul li a, .pagination li:first-child a, .pagination li:last-child a {
   color: var(--color1);
   background: var(--color2);
   border-radius: 5px;
@@ -312,21 +313,27 @@ form input.btn-principal:hover ,.btn-principal:hover{
 }
 .leads-nav ul li a, .pagination li a{
   padding: 5px 10px;
+  border: 1px solid var(--color2);
 }
-.leads-nav ul li:hover a, .pagination li:hover {
+.leads-nav ul li:hover a, .pagination li:hover ,.pagination li:hover a {
   background: var(--color3);
+  color: var(--color1);
 }
-.leads-table table{
+.leads-table table ,.servicesListTable{
   width: 100%;
 }
-.leads-table table thead , .leads-table table tbody td{
+
+.leads-table table thead , .leads-table tbody td ,.servicesListTable table thead ,.servicesListTable td{
   height: auto;
   background: var(--color1);
   padding: 15px 10px;
   font-size: 16px;
   
 }
-.leads-table table thead th {
+.servicesListTable td {
+  height: 100px ;
+}
+.leads-table  thead th ,.servicesListTable thead th {
   text-align: start;
   padding: 15px 10px;
   font-size: 18px;
@@ -334,8 +341,6 @@ form input.btn-principal:hover ,.btn-principal:hover{
   border-radius: 0;
   border: 0;
   color: var(--color1);
-}
-.leads-table table tbody tr:nth-child(odd) td {
 }
 p.lead-num {
   padding: 10px 10px;
@@ -346,17 +351,20 @@ p.lead-num {
   gap:10px;
     align-items: center;
 }
-span.l-one , span.l-two{
-  height: 30px;
-  width: 30px;
+.l-one , span.l-two{
   display: flex;
   justify-content: center;
   align-items: center;
   background: var(--color2);
   border-radius: 3px;
+  cursor: pointer;
 }
-span.l-two {
-  background: #ff0000c9;
+.l-one , span.l-two {
+  height: 30px;
+  width: 30px;
+}
+.l-two {
+  background: #ff0000c9 !important;  
 }
 
 .l-btns svg{
@@ -373,12 +381,16 @@ span.l-two {
   margin: 0 5px;
   cursor: pointer;
 }
-
+.pagination .active a {
+  background: var(--color2);
+  color: var(--color1);
+}
 .pagination .active {
   font-weight: bold;
 }
 li.previous.disabled ,li.next.disabled {
   cursor: not-allowed;
+  opacity: .3;
 }
 
 /******* Stats *******/
@@ -470,4 +482,15 @@ a.btn-principal.delete {
 }
 a.btn-principal.delete:hover {
   background: rgb(165, 11, 11);
+}
+
+
+/******* Service list   *******/
+.servicesListTable td p ,p.message-text {
+  font-size: 16px;
+  width: 380px;
+  height: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
