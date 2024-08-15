@@ -14,6 +14,7 @@ import { BsQuestionOctagon } from "react-icons/bs";
 import { FiFileText } from "react-icons/fi";
 import { FaList } from "react-icons/fa6";
 import logo from '../assets/logo.png'
+import { LuNewspaper } from "react-icons/lu";
 
 
 
@@ -36,13 +37,13 @@ export default function Aside(){
           <li><NavLink to='/presentation'><BsShop />Qui sommes-nous</NavLink></li>
           <li><NavLink to="/serviceslist"><FaList />Services</NavLink></li>
           <li><NavLink to="/galerie"><FaRegImages />Galerie</NavLink></li>
-          <li><NavLink to="/contact"><RiContactsLine />Contact</NavLink></li>
+          <li><NavLink to="/newsLIst"><LuNewspaper />Actualites</NavLink></li>
         </ul>   
       <p className="">Autres</p>
       <ul>
       <li><NavLink to="/profile"><LuUserSquare2 />Profile</NavLink></li>
-        <li><BsQuestionOctagon />FAQ</li>
-        <li><FiFileText />Condition general</li>
+      <li><NavLink to="/faq"><BsQuestionOctagon />FAQ</NavLink></li>
+      <li><FiFileText />Condition general</li>
       </ul>
     </aside>
   )

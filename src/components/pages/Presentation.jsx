@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Editor } from '@tinymce/tinymce-react';
+import { Editor } from '@tinymce/tinymce-react';  
 
 export default function Accueil() {
   const editorRef = useRef(null);
@@ -17,11 +17,11 @@ export default function Accueil() {
       <form className="formulaire" onSubmit={handleSubmit}>
         <div className="form-group">
           <span>Titre de la page</span>
-          <input type="text" name="pageTitle" />
+          <input type="text" name="pageTitle" defaultValue='Page qui sommes-nous'/>
         </div>
         <div className="form-group">
           <span>Sous titre</span>
-          <input type="text" name="subTitle"  />
+          <input type="text" name="subTitle"  defaultValue='Sous titre sommes-nous'/>
         </div>
         <div className="form-group">
           <span>Conteunu</span>
@@ -30,14 +30,15 @@ export default function Accueil() {
             init={{
               // plugins: 'anchor autolink charmap inlinecss markdown',
               // toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-              tinycomments_mode: 'embedded',
-              tinycomments_author: 'Author name',
+              // tinycomments_mode: 'embedded',
+              // tinycomments_author: 'Author name',
         
               ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
             }}
             initialValue="Site en cours d'enrichissement..."
           />
         </div>
+       
         <div className="form-group">
           <input className="btn-principal" type="submit" value='Valide' />
         </div>

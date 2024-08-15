@@ -1,13 +1,14 @@
 import React from "react";
-import servicesData from '../../data/services'
+import servicesData from '../../data/services.js'
+import actuData from '../../data/news.js'
 import { GoFile } from "react-icons/go";
 import { AiOutlineDelete } from "react-icons/ai";
 import { Link, NavLink } from "react-router-dom";
 import { FaRegEye } from "react-icons/fa6";
 import Swal from 'sweetalert2';
+import newsData from "../../data/news.js";
 
-export default function ServicesList(){
-
+export default function NewsLIst(){
   const showDeleteAlert = () => {
     Swal.fire({
       title: 'Êtes-vous sûr ?',
@@ -35,7 +36,7 @@ export default function ServicesList(){
     <div className="service-list">
       <div className="services-box">
         <div className="cta">
-          <p className="btn-principal">Liste des services</p>
+          <p className="btn-principal">Liste des actualites</p>
           <button className="btn-principal" >Ajouter</button>
         </div>
       <div>
@@ -43,25 +44,33 @@ export default function ServicesList(){
         <thead>
           <tr>
             <th>Image</th>
+            <th>Auteur</th>
             <th>Titre</th>
-            <th>Sous titre</th>
+            <th>Date de publications</th>
             <th>Texte</th>
             <th>Modifier</th>
           </tr>
         </thead>
         <tbody>
-          {servicesData.services.map(service => (
-            <tr key={service.id}>
-              <td>
-                <img src={service.image} alt={service.title} style={{ width: '100px', height: 'auto' }} />
-              </td>
-              <td>{service.title}</td>
-              <td>{service.subtitle}</td>
-              <td><p className="service-text">{service.texte}</p></td>
-              <td className="l-btns"><Link className="l-one"   to={`/service?id=${service.id}`}  title="Consulter" ><FaRegEye /></Link> <span className="l-two" onClick={showDeleteAlert}><AiOutlineDelete /></span></td>
-
-            </tr>
-          ))}
+        {newsData.map(actu => (
+          <tr key={actu.id}>
+            <td>
+              <img src={actu.image} alt={actu.title} style={{ width: '100px', height: 'auto' }} />
+            </td>
+            <td>{actu.author}</td>
+            <td>{actu.title}</td>
+            <td>{actu.date}</td>
+            <td><p className="service-text">{actu.text}</p></td>
+            <td className="l-btns">
+              <Link className="l-one" to={`/actualite?id=${actu.id}`} title="Consulter">
+                <FaRegEye />
+              </Link>
+              <span className="l-two" onClick={showDeleteAlert}>
+                <AiOutlineDelete />
+              </span>
+            </td>
+          </tr>
+        ))}
         </tbody>
       </table>
     </div>

@@ -25,6 +25,16 @@ p{
   margin-bottom: 10px;
   font-size: 20px;
 }
+.separator {
+  height: 4px;
+  width: 100%;
+  background: #89898947;
+  margin: 30px 0;
+}
+a{
+  text-decoration: none;
+  transition: all .3s linear;
+}
 /**** header ***/
 header.fixed_header {
   position: fixed;
@@ -68,7 +78,6 @@ span.statu {
   padding: 40px 0px 20px 20px;
   z-index: 39;
   box-shadow: 0px 8px 24px rgba(27, 46, 94, 0.12);
-  
 }
 
 .left-aside p{
@@ -155,7 +164,7 @@ span.statu {
   margin: 20px 0;
 
 }
-.cta a {
+header .cta a {
   display: block;
   min-width: 160px;
 }
@@ -220,13 +229,13 @@ form .form-group {
 form .form-group span {
   font-size: 15px;
   display: block;
-  padding: 0 0 5px 0;
+  padding: 0 0 5px 5px;
   color: #636060;
 }
 form .form-group input {
   padding: 10px;
   border: 2px solid #eee;
-  
+  font-size: 14px;
   outline: none;
   color: var(--color4);
   border-radius: 5px;
@@ -255,7 +264,9 @@ form input.btn-principal:hover ,.btn-principal:hover{
   border-color: var(--color3);
   background: #20bb59;
 }
-
+.form-group.cta {
+  flex-direction: row;
+}
 /******* Leads *******/
 .leads-boxs {
   display: flex;
@@ -315,7 +326,7 @@ form input.btn-principal:hover ,.btn-principal:hover{
   padding: 5px 10px;
   border: 1px solid var(--color2);
 }
-.leads-nav ul li:hover a, .pagination li:hover ,.pagination li:hover a {
+.leads-nav ul li:hover a, .pagination li:hover a {
   background: var(--color3);
   color: var(--color1);
 }
@@ -343,7 +354,7 @@ form input.btn-principal:hover ,.btn-principal:hover{
   color: var(--color1);
 }
 p.lead-num {
-  padding: 10px 10px;
+  /* padding: 10px 10px; */
 }
 .l-btns{
   display: flex;
@@ -374,7 +385,7 @@ p.lead-num {
 .pagination {
   display: flex;
   list-style: none;
-  padding: 0;
+  padding: 20px 0;
 }
 
 .pagination li {
@@ -447,7 +458,23 @@ li.previous.disabled ,li.next.disabled {
 .form-flex .form-group {
   width: 44%;
 }
-
+.banners {
+  margin: 40px 0;
+  background: var(--color1);
+  box-shadow: var(--shadow);
+  padding: 40px;
+}
+.banners-boxes {
+  display: grid;
+  grid-template-columns: repeat(4, 330px);
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-gap: 20px;
+  width: 100%;
+}
+.banner img {
+  height: auto;
+  width: 100%;
+}
 /******* Lead page   *******/
 
 .lead-block {
@@ -466,12 +493,17 @@ li.previous.disabled ,li.next.disabled {
   border-radius: 10px;
   padding: 40px 20px 20px;
   box-shadow: var(--shadow);
-  width: 40%;
+  width: 45%;
 }
 .lead-two {
-  width: 44%;
-  display: flex;
-  justify-self: center;
+    width: 45%;
+    display: flex;
+    background: var(--color1);
+    border-radius: 10px;
+    padding: 10px 20px 20px;
+    box-shadow: var(--shadow);
+    justify-content: center;
+    align-items: center;
 }
 .lead-two img {
   height: auto;
@@ -493,4 +525,166 @@ a.btn-principal.delete:hover {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+img.current-service-img {
+  height: auto;
+  width: 300px;
+}
+.form-group.current-img {
+  flex-direction: row;
+  gap: 20px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css);
+@import url(https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css);
+
+body {
+    background-color: #e0e3e8;
+    font-family: "Rubik", sans-serif;
+}
+
+a, a:hover, a:focus {
+    text-decoration: none;
+    transition: 0.5s;
+    outline: none;
+}
+
+/******* Galerie page  *******/
+.galerie-img {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+p.g-text {
+  font-size: 17px;
+}
+/******* FAQ page  *******/
+.faq-block {
+    display: block;
+    position: relative;
+    
+    
+}
+.faq-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: stretch;
+  gap: 40px;
+}
+
+.card {
+    border-radius: 5px;
+    color: var(--color4);
+    overflow: hidden;
+    width: 45%;
+    padding: 40px 20px;
+    background: var(--color1);
+    box-shadow: var(--shadow);
+}
+.faq-cards .card:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rc-accordion-toggle {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    justify-content: space-between;
+    background-color: #f5f5f5;
+    transition: 0.3s;
+    align-items: center;
+    padding: 10px;
+}
+.rc-accordion-toggle.active{
+    background-color: var(--color3);
+}
+.rc-accordion-toggle.active svg {
+  color: var(--color1);
+}
+.rc-accordion-toggle.active .rc-accordion-icon{
+    transform: rotate(180deg);
+    color: #fff;
+}
+.rc-accordion-card{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.rc-accordion-card:last-child{
+    margin-bottom: 0;
+}
+.rc-accordion-title{
+  font-weight: 500;
+  font-size: 15px;
+  position: relative;
+  margin-bottom: 0;
+  color: var(--color4);
+  transition: 0.3s;
+}
+.rc-accordion-toggle.active .rc-accordion-title{
+    color: #fff;
+}
+.rc-accordion-icon{
+    position: relative;
+    top: 2px;
+    color: #475F7B;
+    transition: 0.35s;
+    font-size: 12px;
+}
+.rc-accordion-body{
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 15px;
+}
+.rc-accordion-body p{
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #727E8C;
+}
+.rc-collapse{
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease;
+}
+.rc-collapse.show{
+    height: auto;
+}
+
+/* Desktop styles */
+@media (max-width: 1325px) {
+  .left-aside{
+    width: 230px;
+  }
+  .head-logo img {
+    width: 150px;
+  }
+  header.fixed_header {
+    padding: 0 2% 0 20%;
+  }
+  header p {
+    font-size: 16px;
+  }
+  .content {
+    padding: 130px 40px 50px 260px;
+  }
+  .leads-table thead th, .servicesListTable thead th{
+    font-size: 16px;
+  }
+  .servicesListTable td p, p.message-text {
+    width: 250px;
+  } 
+  .left-aside p {
+    font-size: 18px;
+    padding: 5px 0 10px;
+  } 
+  .left-aside ul li {
+    padding: 7px 10px 7px 5px;
+  } 
 }

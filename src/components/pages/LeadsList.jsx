@@ -90,6 +90,8 @@ export default function LeadsList(props) {
           <li><a href="#">Supprumer</a></li>
         </ul>
       </div>
+      <p className="lead-num">Vous avez {data.length} leads en total</p>
+
       <div className="leads-table">
         <table>
           <thead>
@@ -114,7 +116,6 @@ export default function LeadsList(props) {
             ))}
           </tbody>
         </table>
-        <p className="lead-num">Vous avez {data.length} leads en total</p>
         <ReactPaginate
           previousLabel={'Précédent'}
           nextLabel={'Suivant'}

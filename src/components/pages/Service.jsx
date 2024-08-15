@@ -2,6 +2,7 @@ import { Editor } from '@tinymce/tinymce-react';
 import { useRef , useState ,useEffect  } from 'react';
 import { useLocation } from 'react-router-dom';
 import servicesData from '../../data/services';
+import { NavLink } from 'react-router-dom';
 
 export default function Service (){
 
@@ -58,8 +59,13 @@ export default function Service (){
                     initialValue={service.texte}
                 />
                 </div>
-                <div className="form-group">
-                <input className="btn-principal" type="submit" value='Valide' />
+                <div className="form-group current-img">
+                <img src={service.image} className='current-service-img' alt="" />
+                </div>
+                <div className="form-group cta">
+                    <input className="btn-principal" type="submit" value='Enregistrer' />
+                    <NavLink className="btn-principal" to='/serviceslist'>Routeur</NavLink>
+
                 </div>
             </form>
         </>
