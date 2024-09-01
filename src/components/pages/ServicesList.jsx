@@ -36,7 +36,7 @@ export default function ServicesList(){
       <div className="services-box">
         <div className="cta">
           <p className="btn-principal">Liste des services</p>
-          <button className="btn-principal" >Ajouter</button>
+          <NavLink className="btn-principal" to='/serviceAdd'>Ajouter</NavLink>
         </div>
       <div>
       <table className="servicesListTable">

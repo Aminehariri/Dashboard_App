@@ -33,7 +33,6 @@ export default function Service (){
             {/* <h1>{service.title}</h1> */}
             {/* <p>{service.texte}</p> */}
             {/* <img src={service.image} alt={service.title} /> */}
-       
                         
             <form className="formulaire" onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -68,6 +67,7 @@ export default function Service (){
 
                 </div>
             </form>
+            
         </>
     )
 }

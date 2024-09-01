@@ -1,7 +1,7 @@
 :root {
   --color1:#ffffff;
   --color2:#22c55e ;
-  --color3:#20bb59;
+  --color3:#fac146;
   --color4:#090808;
   --bg_color:#F7F9FB;  ;
   --shadow:0 3px 16px rgba(142, 134, 171, .05);
@@ -19,7 +19,7 @@
 h1,h2,h3,h4,h5,h6{
   font-family: var(--font1);
   font-weight: 500;
-  margin-bottom: 40px;
+  color: var(--color2);
 }
 p{
   margin-bottom: 10px;
@@ -142,6 +142,9 @@ span.statu {
   width: 3px;
   background-color: transparent;
   transition: all .3s linear;
+  height: 90%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .left-aside ul li a:hover:before ,.left-aside ul li a.active:before{
   border-color: var(--color2);
@@ -203,6 +206,7 @@ h2.main-title {
   position: relative;
   font-size: 25px;
   color: var(--color2);
+  margin-bottom: 40px;
 }
 
 h2.main-title:before {
@@ -239,6 +243,8 @@ form .form-group input {
   outline: none;
   color: var(--color4);
   border-radius: 5px;
+  background: var(--color1);
+  width: 100%;
 }
 
 .form-group input:active ,.form-group input:focus {
@@ -262,10 +268,35 @@ form input.btn-principal, .btn-principal , .btn-principal a{
 }
 form input.btn-principal:hover ,.btn-principal:hover{
   border-color: var(--color3);
-  background: #20bb59;
+  background: var(--color3);
 }
 .form-group.cta {
   flex-direction: row;
+}
+.tox .tox-edit-area::before{
+  border-color: var(--color2) !important;
+}
+.passInp {
+  display: flex;
+  justify-content: center;
+}
+.passInp button {
+  position: relative;
+  border: 2px solid #eee;
+  border-left: none;
+  width: 40px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  background: transparent;
+  z-index: 5;
+  cursor: pointer;
+}
+.passInp input{
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.passInp svg {
+  font-size: 18px;
 }
 /******* Leads *******/
 .leads-boxs {
@@ -329,6 +360,7 @@ form input.btn-principal:hover ,.btn-principal:hover{
 .leads-nav ul li:hover a, .pagination li:hover a {
   background: var(--color3);
   color: var(--color1);
+  border-color: var(--color3);
 }
 .leads-table table ,.servicesListTable{
   width: 100%;
@@ -339,7 +371,7 @@ form input.btn-principal:hover ,.btn-principal:hover{
   background: var(--color1);
   padding: 15px 10px;
   font-size: 16px;
-  
+  height: 70px;
 }
 .servicesListTable td {
   height: 100px ;
@@ -407,7 +439,7 @@ li.previous.disabled ,li.next.disabled {
 /******* Stats *******/
 
 .month-buttons {
-  margin: 20px 0;
+  margin:0px 0;
 }
 
 /******* Settings *******/
@@ -546,7 +578,7 @@ body {
 
 a, a:hover, a:focus {
     text-decoration: none;
-    transition: 0.5s;
+    transition: 0.3s;
     outline: none;
 }
 
@@ -657,34 +689,70 @@ p.g-text {
     height: auto;
 }
 
+/******* Leads *******/
+
+
 /* Desktop styles */
 @media (max-width: 1325px) {
-  .left-aside{
-    width: 230px;
+  .btn-principal{
+    padding: 7px 10px;
   }
-  .head-logo img {
+  .l-box{
+    padding: 20px;
+  }
+  p.lead-num ,p ,header p{
+    font-size: 16px;
+  }
+  .l-box h4{
+    font-size: 27px;
+  }
+  .left-aside {
+    width: 200px;
+    padding: 20px 0px 20px 15px;
+  }
+  .card1 {
+    width: 35%;
+  }
+  .card2 {
+    width: 65%;
+  }
+  p.news-title {
+    width: 180px !important;
+  }
+  td.tNewsDate {
     width: 150px;
   }
-  header.fixed_header {
-    padding: 0 2% 0 20%;
+  .head-logo img {
+    width: 170px;
   }
-  header p {
-    font-size: 16px;
+  .head-logo {
+    padding: 0 0 10px 0px;
+  }
+  header.fixed_header {
+    padding: 0 2% 0 18%;
   }
   .content {
-    padding: 130px 40px 50px 260px;
+    padding: 110px 30px 50px 230px;
   }
-  .leads-table thead th, .servicesListTable thead th{
+  .leads-table thead th, .servicesListTable thead th {
     font-size: 16px;
   }
-  .servicesListTable td p, p.message-text {
-    width: 250px;
+  .servicesListTable td p, p.message-text ,.leads-table tbody td ,.servicesListTable td ,form .form-group span{
+    font-size: 14px;
   } 
+
   .left-aside p {
-    font-size: 18px;
-    padding: 5px 0 10px;
-  } 
+    font-size: 17px;
+    padding: 5px 0 5px;
+}
   .left-aside ul li {
     padding: 7px 10px 7px 5px;
+    margin: 0;
   } 
+  .left-aside ul li a, .left-aside ul li {
+    font-size: 14px;
+  } 
+  .left-aside ul li svg{
+    font-size: 18px;
+  }
 }

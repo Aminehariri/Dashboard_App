@@ -19,6 +19,9 @@ import Login from './components/Login.jsx';
 import { LogarithmicScale } from 'chart.js';
 import Faq from './components/pages/Faq.jsx';
 import Actualite from './components/pages/Actualite.jsx';
+import ServiceAdd from './components/pages/ServiceAdd.jsx'
+import NewsAdd from './components/pages/NewsAdd.jsx'
+import Conditions from './components/pages/Conditions.jsx'
 
 
 
@@ -45,7 +48,10 @@ const App = () => {
             <Route path="/service" element={<Service />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/actualite" element={<Actualite />} />
-             
+            <Route path="/serviceAdd" element={<ServiceAdd />} />
+            <Route path="/newsAdd" element={<NewsAdd />} />
+            <Route path="/conditions" element={<Conditions />} />
+            
           </Routes>
           
 

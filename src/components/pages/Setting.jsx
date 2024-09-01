@@ -6,10 +6,29 @@ import banner3 from '../../assets/banners/bann3.jpeg'
 import banner4 from '../../assets/banners/bann4.jpeg'
 import banner5 from '../../assets/banners/bann5.jpeg'
 import noImg from '../../assets/no-photo.png'
+import { FaRegEye } from "react-icons/fa";
+import { GoEyeClosed } from "react-icons/go";
+
+
 
 
 export default function Setting(){
- 
+
+  const [passType,setPassType]=useState('password')
+  // setPassType(hudelPassType ? 'password' : 'text');
+
+ function hudelPassType(){
+  if(passType==='password'){
+    setPassType('text')
+  }else{
+    setPassType('password')
+  }
+ }
+
+ const hundleSubmit = (e) => {
+  e.preventDefault();
+  
+};
   return(
     <>
       <div className="setting-box">
@@ -20,12 +39,12 @@ export default function Setting(){
         <div className="s-box s-box2">
         <h2 className="main-title">Gestion des informations personnelles </h2>
 
-          <form action="#" className='s-form'>
+          <form action="#" className='s-form' onSubmit={hundleSubmit}>
             <div className="form-flex">
             
           
 
-              <div className="form-group"><span>Nom</span>
+              <div className="form-group" ><span>Nom</span>
                 <input type="text"  defaultValue='Amine HARIRI' name=""  className='settingNom' />
               </div>
               <div className="form-group"><span>Telephone</span>
@@ -34,23 +53,27 @@ export default function Setting(){
             </div>
             <div className="form-flex">
               <div className="form-group"><span>Adresse</span>
-                <input type="text"  defaultValue='CASABLANCA' name=""  className='settingAdresse' />
+                <input type="text"  defaultValue='CASABLANCA' className='settingAdresse' />
               </div>
               <div className="form-group"><span>Email</span>
-                <input type="mail"  defaultValue='a.hariri@gmail.com' name=""  className='settingMail' />
+                <input type="mail"  defaultValue='a.hariri@gmail.com'  className='settingMail' />
               </div>
             </div>
           <button  className="btn-principal">Validé</button>
           </form>
           <h2 className="main-title">Securite </h2>
 
-          <form action="#" className='s-form'>
+          <form action="#" className='s-form' onSubmit={hundleSubmit}>
             <div className="form-flex">
-              <div class="form-group"><span>Login</span>
-                <input type="text" defaultValue='a.hariri@gmail.com' name=""  className='settingUser' />
+              <div className="form-group"><span>Login</span>
+                <input type="text" defaultValue='a.hariri@gmail.com'  className='settingUser' />
               </div>
-              <div class="form-group"><span>Password</span>
-                <input type="password"  defaultValue='0612365489' name=""  className='settingPass' />
+              <div className="form-group">
+              <span>Password</span>
+              <div className='passInp'>
+                <input type={passType}  defaultValue='0612365489' className='settingPass' />
+                <button onClick={hudelPassType}>{passType!=='password'? <FaRegEye /> :  <GoEyeClosed />}</button>
+              </div>
               </div>
             </div>
           <button  className="btn-principal">Validé</button>

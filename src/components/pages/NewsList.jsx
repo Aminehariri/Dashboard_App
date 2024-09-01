@@ -37,7 +37,7 @@ export default function NewsLIst(){
       <div className="services-box">
         <div className="cta">
           <p className="btn-principal">Liste des actualites</p>
-          <button className="btn-principal" >Ajouter</button>
+          <Link className="btn-principal" to='/newsAdd' >Ajouter</Link>
         </div>
       <div>
       <table className="servicesListTable">
@@ -58,11 +58,12 @@ export default function NewsLIst(){
               <img src={actu.image} alt={actu.title} style={{ width: '100px', height: 'auto' }} />
             </td>
             <td>{actu.author}</td>
-            <td>{actu.title}</td>
-            <td>{actu.date}</td>
-            <td><p className="service-text">{actu.text}</p></td>
+            <td><p className="news-title">{actu.title}</p></td>
+            
+            <td className="tNewsDate">{actu.date}</td>
+            <td><p className="news-text">{actu.text}</p></td>
             <td className="l-btns">
-              <Link className="l-one" to={`/actualite?id=${actu.id}`} title="Consulter">
+              <Link className="l-one" to={`/actualite?id=${actu.id}`} title="Consulter" >
                 <FaRegEye />
               </Link>
               <span className="l-two" onClick={showDeleteAlert}>

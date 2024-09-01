@@ -43,7 +43,8 @@ export default function Aside(){
       <ul>
       <li><NavLink to="/profile"><LuUserSquare2 />Profile</NavLink></li>
       <li><NavLink to="/faq"><BsQuestionOctagon />FAQ</NavLink></li>
-      <li><FiFileText />Condition general</li>
+      <li><NavLink to="/conditions"><FiFileText />Condition general</NavLink></li>
+    
       </ul>
     </aside>
   )

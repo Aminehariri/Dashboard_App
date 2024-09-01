@@ -87,10 +87,10 @@ const Faq = () => {
         <>
             <div className="faq-block">
                 <div className="faq-cards">
-                    <div className="card">
+                    <div className="card card1">
                         <img src={faqImg} alt="" />
                     </div>
-                    <div className="card">
+                    <div className="card card2">
                         <div className="card-body">
                           <h2 className="main-title">les question fréquentes</h2>
                             {faqs.map((faq, index) => {

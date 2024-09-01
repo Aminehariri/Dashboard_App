@@ -84,8 +84,8 @@ const Stats = () => {
       {
         label: 'Daily Site Views',
         data: monthlyData[selectedMonth].data,
-        backgroundColor: '#f0f8ff',
-        borderColor: '#3e86d4',
+        backgroundColor: '#22c55e85',
+        borderColor: '#22c55e',
         borderWidth: 1,
       },
     ],
@@ -95,8 +95,8 @@ const Stats = () => {
       {
         label: 'Monthly Site Views',
         data: Object.values(totalMonthlyViews),
-        backgroundColor: '#f0f8ff',
-        borderColor: '#3e86d4',
+        backgroundColor: '#22c55e85',
+        borderColor: '#22c55e',
         borderWidth: 1,
       },
     ],
